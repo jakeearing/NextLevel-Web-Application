@@ -33,7 +33,7 @@ header {
     height: 50px;
 }
 
-#logo {
+.logo {
     margin: 20px 0px 0px 50px;
     height: 80px;
     width: 80px;
@@ -70,6 +70,37 @@ li a {
     color:white;
 }
 
+#connectionsText{
+    height: 320px;
+    position: relative;
+    margin: 10vh auto;
+    width: 380px;
+}
+
+#connectionInfo{
+    height: 320px;
+
+    margin: 10vh auto auto 20vw;
+    width: 800px;
+    position: absolute;
+}
+
+#connectionsList {
+    display: block;
+}
+
+ul#connectionsList  {
+    margin-left: 25px;
+    display: block;
+    height: 120px;
+    margin-bottom: 5px;
+}
+
+#connectionsList li a {
+    color:black;
+    display: block;
+}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -89,6 +120,41 @@ main {
     width: 100%;
     min-height: calc(100vh - 230px);
     position: absolute;
+}
+
+button {
+    float: right;
+    margin: 5px 10px 10px 10px;
+    display: inline;
+}
+
+#connectionInfo h2{
+    width: 600px;
+    text-align: center;
+    display: inline;
+    
+}
+
+#eventLocation {
+    position: relative;
+    display: inline;
+    width: 200px;
+    margin: 10px auto;
+    float: right;
+}
+
+#eventDetails {
+    bottom: 0px;
+    position: relative;
+    display: block;
+    width: 400px;
+
+}
+
+#eventLocation p {
+    display: inline;
+    text-align: center;
+    width: 250px;
 }
 
 #welcomeText{
