@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html, body{
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header,
+footer {
+    color: white;
+    background-color: #202020;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+header {
+    top: 0;
+    height: 170px;
+}
+
+#topHeader {
+    height: 120px;
+    border-style: none none solid none;
+    border-width: thin;
+}
+
+#bottomHeader {
+    height: 50px;
+}
+
+#logo {
+    margin: 20px 0px 0px 50px;
+    height: 80px;
+    width: 80px;
+    display: inline;
+}
+
+#userNav {
+    font-size: 20px;
+    margin: 50px;
+    float: right;
+    height: 20px;
+}
+
+#siteNav {
+    margin: 15px 0px 0px 40px;
+    float: left;
+    height: 20px;
+
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+}
+
+li {
+
+    display: inline;
+    margin: 15px;
+}
+
+li a {
+    color:white;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+}
+
+#footerNav {
+    height: 20px;
+    width: 800px;
+    position: relative;
+    margin: 20px 0px 0px 40px;
+}
+
+main {
+    top: 170px;
+    bottom: 60px;
+    width: 100%;
+    min-height: calc(100vh - 230px);
+    position: absolute;
+}
+
+#welcomeText{
+    color: black;
+    word-wrap: break-word;
+    width: 60%;
+    font-size: 25px;
+    position: relative;
+    margin: 10vh auto;
+}
