@@ -12,7 +12,7 @@ html, body{
 header,
 footer {
     color: white;
-    background-color: #202020;
+    background-color: black;
     left: 0;
     right: 0;
     width: 100%;
@@ -34,7 +34,7 @@ header {
 }
 
 .logo {
-    margin: 20px 0px 0px 50px;
+    margin: 20px 0px 0px 58px;
     height: 80px;
     width: 80px;
     display: inline;
@@ -80,8 +80,8 @@ li a {
 #connectionInfo{
     height: 320px;
 
-    margin: 10vh auto auto 20vw;
-    width: 800px;
+    margin: 10vh auto auto 30vw;
+    width: 680px;
     position: absolute;
 }
 
@@ -123,9 +123,9 @@ main {
 }
 
 button {
-    float: right;
-    margin: 5px 10px 10px 10px;
+    margin: 5px 5px 5px 10px;
     display: inline;
+    height: 25px;
 }
 
 #connectionInfo h2{
@@ -140,7 +140,7 @@ button {
     display: inline;
     width: 200px;
     margin: 10px auto;
-    float: right;
+    right: 0px;
 }
 
 #eventDetails {
@@ -158,7 +158,10 @@ button {
 }
 
 #createButton{
-    float:left;
+    left: 100px;
+    position: relative;
+    margin: auto auto;
+    width: 150px;
 }
 
 #eventLocation p {
@@ -178,4 +181,28 @@ button {
 
 input{
     width: 300px;
+    float: right;
+}
+
+
+#logoText {
+    color: white;
+    font-size: 40px;
+    height: 40px;
+    width: 240px;
+    display: inline;
+    position: fixed;
+    left: 145px;
+    top: 40px;
+}
+
+#bofaLogo {
+    margin: 20px 0px 20px 0px;
+    height: 80px;
+    width: 120px;
+    display: inline;
+}
+
+#descriptionText{
+    height: 50px;
 }

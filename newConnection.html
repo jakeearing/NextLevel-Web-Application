@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>UNCC NEXT LEVEL</title>
+    <title>Next Level - Create Connection</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -12,6 +12,7 @@
         <div id="topHeader">
             <a href="index.html">
                 <img src="logo.png" class="logo" alt="UNCC NEXT LEVEL">
+                <p id="logoText"><span style="color:green;">NEXT</span><b>LEVEL</b></p>
             </a>
             <nav id="userNav">
                 <ul>
@@ -36,39 +37,49 @@
                     <label>Topic</label>
                     <input type="text" placeholder="Topic">
                 </div>
+                <br>
                 <div>
                     <label>Title</label>
                     <input type="text" placeholder="Title">
                 </div>
+                <br>
                 <div>
                     <label>Host</label>
                     <input type="text" placeholder="Host">
                 </div>
+                <br>
                 <div>
                     <label>Details</label>
-                    <input type="text" placeholder="Description">
+                    <input type="text" placeholder="Description" id="descriptionText">
                 </div>
+                <br>
+                <br>
+                <br>
                 <div>
                     <label>Where</label>
                     <input type="text" placeholder="Location">
                 </div>
+                <br>
                 <div>
                     <label>When</label>
                     <input type="date" placeholder="mm/dd/yyyy">
                 </div>
+                <br>
                 <div>
                     <label>Start</label>
                     <input type="time" placeholder="12:00 AM">
                 </div>
+                <br>
                 <div>
                     <label>End</label>
                     <input type="time" placeholder="12:00 AM">
                 </div>
+                <br>
                 <div>
-                    <label>Image URL</label>
-                    <input type="image" placeholder="Image URL">
+                    <label>Image</label>
+                    <input type="file" placeholder="Image URL">
                 </div>
-
+                <br>
                     <button type="button" onclick="location.href='connections.html'" id="createButton">Create Connection</button>
 
             </form>
