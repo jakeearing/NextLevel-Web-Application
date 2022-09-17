@@ -148,7 +148,17 @@ button {
     position: relative;
     display: block;
     width: 400px;
+}
 
+#newConnectForm {
+    margin: 20px auto 0px auto;
+    position: relative;
+    display: block;
+    width: 400px;
+}
+
+#createButton{
+    float:left;
 }
 
 #eventLocation p {
@@ -164,4 +174,8 @@ button {
     font-size: 25px;
     position: relative;
     margin: 10vh auto;
+}
+
+input{
+    width: 300px;
 }
