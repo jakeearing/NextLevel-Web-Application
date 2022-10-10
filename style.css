@@ -89,14 +89,14 @@ li a {
     display: block;
 }
 
-ul#connectionsList  {
+ul.connectionsList  {
     margin-left: 25px;
     display: block;
     height: 120px;
     margin-bottom: 5px;
 }
 
-#connectionsList li a {
+.connectionsList li a {
     color:black;
     display: block;
 }
