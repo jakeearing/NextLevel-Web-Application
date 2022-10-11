@@ -114,14 +114,3 @@ exports.deleteById = id => {
         return false;
     }
 }
-
-exports.findNullType = enteredType => events.find(events=> {  
-    events.forEach(event=>{
-        if (event.type === enteredType){
-        }
-        else {
-            return 0;
-        }
-        return 1;
-    })
-});
