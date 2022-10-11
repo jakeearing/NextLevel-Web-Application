@@ -3,7 +3,6 @@ const controller = require('../controllers/connectionController');
 
 const router = express.Router();
 
-//GET /connections: Shows user all connections
 router.get('/', controller.index);
 
 router.get('/new', controller.new);
