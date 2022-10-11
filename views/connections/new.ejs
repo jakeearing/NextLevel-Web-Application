@@ -1,58 +1,56 @@
-<%- include('./partials/header.ejs')%>
+<%- include('../partials/header.ejs')%>
     <main>
         <div id="newConnectForm">
-            <form>
+            <form action = '/connections' method = 'POST'>
                 <div>
                     <label>Topic</label>
-                    <input type="text" placeholder="Topic">
+                    <input type="text" placeholder="Topic" id="topic" name="topic">
                 </div>
                 <br>
                 <div>
                     <label>Title</label>
-                    <input type="text" placeholder="Title">
+                    <input type="text" placeholder="Title" id="title" name="title">
                 </div>
                 <br>
                 <div>
                     <label>Host</label>
-                    <input type="text" placeholder="Host">
+                    <input type="text" placeholder="Host" id="host" name="host">
                 </div>
                 <br>
                 <div>
                     <label>Details</label>
-                    <input type="text" placeholder="Description" id="descriptionText">
+                    <input type="text" placeholder="Description" id="descriptionText" id="description" name="description">
                 </div>
                 <br>
                 <br>
                 <br>
                 <div>
                     <label>Where</label>
-                    <input type="text" placeholder="Location">
+                    <input type="text" placeholder="Location" id="location" name="location">
                 </div>
                 <br>
                 <div>
                     <label>When</label>
-                    <input type="date">
+                    <input type="date" id="date" name="date">
                 </div>
                 <br>
                 <div>
                     <label>Start</label>
-                    <input type="time">
+                    <input type="time" id="start" name="start">
                 </div>
                 <br>
                 <div>
                     <label>End</label>
-                    <input type="time">
+                    <input type="time" id="end" name="end">
                 </div>
                 <br>
                 <div>
                     <label>Image</label>
-                    <input type="file">
+                    <input type="file" id="image" name="image">
                 </div>
                 <br>
-                <button type="button" onclick="location.href='connections.html'" id="createButton">Create
-                    Connection</button>
-
+                <button type="submit" id="createButton">Create Connection</button>
             </form>
         </div>
     </main>
-    <%- include('./partials/footer.ejs')%>
+    <%- include('../partials/footer.ejs')%>

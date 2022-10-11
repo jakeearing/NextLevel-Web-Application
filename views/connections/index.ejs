@@ -1,0 +1,27 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div id="connectionsText">
+            <h1>Internship Meetups</h1>
+            <%if(events.length) {%>
+                <%events.forEach(event=>{%>
+                    <%if(event.topic==='intern') {%>
+                    <a href = "/connections/<%=event.id%>"><p><%= event.title%></p></a>
+                    <%}%>
+                <% });
+            } else {%>
+                <p>There are no internship events to display</p>
+            <%}%>
+
+            <h1>Tutoring Meetups</h1>
+            <%if(events.length) {%>
+                <%events.forEach(event=>{%>
+                    <%if(event.topic==='tutor') {%>
+                    <a href = "/connections/<%=event.id%>"><p><%= event.title%></p></a>
+                    <%}%>
+                <% });
+            } else {%>
+                <p>There are no tutoring events to display</p>
+            <%}%>
+        </div>
+    </main>
+<%- include('../partials/footer.ejs')%>

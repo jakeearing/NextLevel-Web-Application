@@ -1,0 +1,28 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div id="connectionInfo">
+            <h2><%= event.title%></h2>
+            <br>
+            <img src="/images/bofa.png" id="bofaLogo" alt="Bank of America Logo">
+            <br>
+            <div id="eventLocation">
+                <p><%= event.host%></p><br>
+                <p><%= event.date%></p><br>
+                <p>Start Time: <%= event.start%></p><br>
+                <p>End Time: <%= event.end%></p><br><br>
+                <p><%= event.location%></p><br>
+            </div>
+
+            <div id="eventDetails">
+                <br>
+                <h3>Details</h3><br>
+                <p><%= event.description%></p>
+            </div>
+            <br>
+            <form>
+                <button type="submit" formmethod = "GET" formaction="/connections/<%= event.id%>/edit">Edit</button>
+                <button type="submit" formmethod = "POST" formaction = "/connections/<%= event.id%>?_method=DELETE">Delete</button>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs')%>
