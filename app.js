@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const connectionRoutes = require('./routes/connectionRoutes');
+const mainRoutes = require('./routes/mainRoutes');
 
 const app = express();
 
@@ -16,17 +17,7 @@ app.use(morgan('tiny'));
 app.use(methodOverride('_method'));
 
 //routes
-app.get('/', (req, res)=>{
-    res.render('index');
-});
-
-app.get('/about', (req, res)=>{
-    res.render('about');
-});
-
-app.get('/contact', (req, res)=>{
-    res.render('contact');
-});
+app.use('/', mainRoutes);
 
 app.use('/connections', connectionRoutes);
 
