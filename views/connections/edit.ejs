@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs')%>
     <main>
         <div id="newConnectForm">
-            <form method = 'POST' action = '/connections/<%=event.id%>?=method=PUT'>
+            <form method = 'POST' action = '/connections/<%=event.id%>?_method=PUT'>
                 <div>
                     <label>Topic</label>
                     <input type="text" placeholder="Topic" id="topic" name="topic" value = "<%=event.topic%>">
@@ -49,7 +49,7 @@
                     <input type="file" id="image" name="image" value = "<%=event.image%>">
                 </div>
                 <br>
-                <button type="submit" id="createButton">Create Connection</button>
+                <button type="submit" id="createButton">Submit Changes</button>
             </form>
         </div>
     </main>
