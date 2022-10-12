@@ -1,27 +1,32 @@
 <%- include('../partials/header.ejs')%>
     <main>
         <div id="connectionsText">
-            <h1>Internship Meetups</h1>
+            
             <%if(events.length) {%>
+                <%var topics = new Array();%>
                 <%events.forEach(event=>{%>
-                    <%if(event.topic==='intern') {%>
-                    <a href = "/connections/<%=event.id%>"><p><%= event.title%></p></a>
-                    <%}%>
+                    <% if (!topics.includes(event.topic)) { %>
+                        <%topics.push(event.topic);%>
+                    <% } %>
                 <% });
             } else {%>
-                <p>There are no internship events to display</p>
+                <p>There are no events to display</p>
             <%}%>
 
-            <h1>Tutoring Meetups</h1>
-            <%if(events.length) {%>
-                <%events.forEach(event=>{%>
-                    <%if(event.topic==='tutor') {%>
-                    <a href = "/connections/<%=event.id%>"><p><%= event.title%></p></a>
-                    <%}%>
-                <% });
-            } else {%>
-                <p>There are no tutoring events to display</p>
-            <%}%>
+            <script>document.write("<table>");</script>
+
+            <% topics.forEach(topic=>{ %>
+                <script>document.write("</a><tr><h1> <%=topic%> Events </h1></tr>");</script>
+                    <%events.forEach(event=>{%>
+                        <% if (event.topic===topic) { %>
+                            <script>document.write("<a href = '/connections/<%=event.id%>'><tr><%=event.title%></tr</a><br>");</script>
+                        <% } %>
+                    <% });%>
+                <%});%>
+                <script>document.write("</table>");</script> 
         </div>
     </main>
 <%- include('../partials/footer.ejs')%>
+
+
+
