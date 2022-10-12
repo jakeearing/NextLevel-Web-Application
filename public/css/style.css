@@ -206,3 +206,8 @@ input{
 #descriptionText{
     height: 50px;
 }
+
+.eventType{
+    display: inline-block;
+    position: relative;
+}

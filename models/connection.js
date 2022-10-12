@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 const events = [
     {
         id: '1',
-        topic: 'intern',
+        topic: 'Internship',
         title: 'Connect with the TIAA recruiting team',
         description: 'Join the TIAA recruitment team for a short presention.',
         host: 'Tom Thomas',
@@ -15,7 +15,7 @@ const events = [
     },
     {
         id: '2',
-        topic: 'intern',
+        topic: 'Internship',
         title: 'Meet with a Bank of America Technical Recruiter',
         description: 'Join BofA Technical Recruiter Kathy Kate for a Q/A about working at Bank of America',
         host: 'Kathy Kate',
@@ -27,7 +27,7 @@ const events = [
     },
     {
         id: '3',
-        topic: 'intern',
+        topic: 'Internship',
         title: 'Meet with a UNCC Careers Counselor',
         description: 'Meet with a UNCC Careers Counselor with information on how to make your resume stand out.',
         host: 'James Jameson',
@@ -39,7 +39,7 @@ const events = [
     },
     {
         id: '4',
-        topic: 'tutor',
+        topic: 'Tutoring',
         title: 'CCI Tutoring Q & A Live Session',
         description: 'Join the CCI Tutoring Department for a Q & A',
         host: 'Jake Earing',
@@ -51,7 +51,7 @@ const events = [
     },
     {
         id: '5',
-        topic: 'tutor',
+        topic: 'Tutoring',
         title: 'Dr. Harini Ramaprasad CCI Tutoring Hiring Event',
         description: 'Interested in joining the CCI Tutoring Team? We will answer all questions and speak to possible future applicants',
         host: 'Dr. Harini Ramaprasad',
@@ -63,7 +63,7 @@ const events = [
     },
     {
         id: '6',
-        topic: 'tutor',
+        topic: 'Tutoring',
         title: 'CCI Tutoring Final Exam Preparation',
         description: 'Multiple tutors from the CCI Tutoring Department will be available to help all CCI students prepare for their final exams and projects.',
         host: 'Jake Earing',
