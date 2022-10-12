@@ -46,10 +46,18 @@ header, footer {
     height: 20px;
 }
 
+#siteNav, #footerNav {
+    float: left;
+    width: fit-content;
+    height: 20px;
+}
+
 #siteNav {
     margin: 15px 0px 0px 40px;
-    float: left;
-    height: 20px;
+}
+
+#footerNav {
+    margin: 20px 0px 0px 40px;
 }
 
 li {
@@ -69,13 +77,6 @@ footer {
     position: absolute;
     bottom: 0;
     height: 60px;
-}
-
-#footerNav {
-    height: 20px;
-    width: 800px;
-    position: relative;
-    margin: 20px 0px 0px 40px;
 }
 
 main {
@@ -101,9 +102,6 @@ button {
 }
 
 #eventDetails {
-    bottom: 0px;
-    position: relative;
-    display: inline-block;
     width: 400px;
 }
 
@@ -112,12 +110,6 @@ button {
     position: relative;
     margin: auto auto;
     width: 150px;
-}
-
-#eventLocation p {
-    display: inline;
-    text-align: center;
-    width: 250px;
 }
 
 #connections{
