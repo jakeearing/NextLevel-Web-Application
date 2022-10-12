@@ -7,6 +7,7 @@
 html, body{
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
 }
 
 header, footer {
@@ -60,17 +61,13 @@ header, footer {
     margin: 20px 0px 0px 40px;
 }
 
-li {
+li{
     display: inline;
-    margin: 15px;
+    margin: 15px; 
 }
 
 li a {
     color:white;
-}
-
-form {
-    width: fit-content;
 }
 
 footer {
@@ -87,45 +84,26 @@ main {
     position: absolute;
 }
 
-button {
-    margin: 5px 5px 5px 10px;
-    display: inline;
-    height: 25px;
-}
-
-#eventLocation {
-    position: relative;
-    display: inline;
-    width: 200px;
-    margin: 10px auto;
-    right: 0px;
-}
-
-#eventDetails {
-    width: 400px;
-}
-
 #createButton{
-    left: 100px;
-    position: relative;
-    margin: auto auto;
     width: 150px;
 }
 
-#connections{
+.textCenter{
+    text-align: center;
+}
+
+#connections, #content{
     height: fit-content;
-    position: relative;
     margin: 10vh auto;
+}
+
+#connections {
     width: fit-content;
 }
 
 #content{
-    color: black;
-    word-wrap: break-word;
     width: 60%;
     font-size: 25px;
-    position: relative;
-    margin: 10vh auto;
 }
 
 input{

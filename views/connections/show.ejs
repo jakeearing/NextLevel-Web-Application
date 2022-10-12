@@ -5,19 +5,16 @@
             <br>
             <img src="<%= event.image%>" class="eventLogo" alt="Event Logo">
             <br>
-            <div id="eventLocation">
-                <p><%= event.host%></p>
-                <p><%= event.date%></p>
-                <p>Start Time: <%= event.start%></p>
-                <p>End Time: <%= event.end%></p><br>
-                <p><%= event.location%></p>
-            </div>
-
-            <div id="eventDetails">
-                <br>
-                <h3>Details</h3><br>
-                <p><%= event.description%></p>
-            </div>
+            <p>Host: <%= event.host%></p>
+            <p>Date: <%= event.date%></p>
+            <p>Start Time: <%= event.start%></p>
+            <p>End Time: <%= event.end%></p>
+            <br>
+            <p><%= event.location%></p>
+            <br>
+            <h3>Details</h3>
+            <br>
+            <p><%= event.description%></p> 
             <br>
             <form>
                 <button type="submit" formmethod = "GET" formaction="/connections/<%= event.id%>/edit">Edit</button>
