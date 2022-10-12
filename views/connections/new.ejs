@@ -1,0 +1,56 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div id="newConnectForm">
+            <form action = '/connections' method = 'POST'>
+                <div>
+                    <label>Topic</label>
+                    <input type="text" placeholder="Topic" id="topic" name="topic">
+                </div>
+                <br>
+                <div>
+                    <label>Title</label>
+                    <input type="text" placeholder="Title" id="title" name="title">
+                </div>
+                <br>
+                <div>
+                    <label>Host</label>
+                    <input type="text" placeholder="Host" id="host" name="host">
+                </div>
+                <br>
+                <div>
+                    <label>Details</label>
+                    <input type="text" placeholder="Description" id="descriptionText" id="description" name="description">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div>
+                    <label>Where</label>
+                    <input type="text" placeholder="Location" id="location" name="location">
+                </div>
+                <br>
+                <div>
+                    <label>When</label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <br>
+                <div>
+                    <label>Start</label>
+                    <input type="time" id="start" name="start">
+                </div>
+                <br>
+                <div>
+                    <label>End</label>
+                    <input type="time" id="end" name="end">
+                </div>
+                <br>
+                <div>
+                    <label>Image</label>
+                    <input type="file" id="image" name="image">
+                </div>
+                <br>
+                <button type="submit" id="createButton">Create Connection</button>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs')%>

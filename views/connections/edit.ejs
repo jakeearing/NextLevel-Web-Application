@@ -1,0 +1,56 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div id="newConnectForm">
+            <form method = 'POST' action = '/connections/<%=event.id%>?_method=PUT'>
+                <div>
+                    <label>Topic</label>
+                    <input type="text" placeholder="Topic" id="topic" name="topic" value = "<%=event.topic%>">
+                </div>
+                <br>
+                <div>
+                    <label>Title</label>
+                    <input type="text" placeholder="Title" id="title" name="title" value = "<%=event.title%>">
+                </div>
+                <br>
+                <div>
+                    <label>Host</label>
+                    <input type="text" placeholder="Host" id="host" name="host" value = "<%=event.host%>">
+                </div>
+                <br>
+                <div>
+                    <label>Details</label>
+                    <input type="text" placeholder="Description" id="descriptionText" id="description" name="description" value = "<%=event.description%>">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div>
+                    <label>Where</label>
+                    <input type="text" placeholder="Location" id="location" name="location" value = "<%=event.location%>">
+                </div>
+                <br>
+                <div>
+                    <label>When</label>
+                    <input type="date" id="date" name="date" value = "<%=event.date%>">
+                </div>
+                <br>
+                <div>
+                    <label>Start</label>
+                    <input type="time" id="start" name="start" value = "<%=event.start%>">
+                </div>
+                <br>
+                <div>
+                    <label>End</label>
+                    <input type="time" id="end" name="end" value = "<%=event.end%>">
+                </div>
+                <br>
+                <div>
+                    <label>Image</label>
+                    <input type="file" id="image" name="image" value = "<%=event.image%>">
+                </div>
+                <br>
+                <button type="submit" id="createButton">Submit Changes</button>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs')%>

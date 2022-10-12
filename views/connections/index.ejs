@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div id="connectionsText">
+            
+            <%if(events.length) {%>
+                <%var topics = new Array();%>
+                <%events.forEach(event=>{%>
+                    <% if (!topics.includes(event.topic)) { %>
+                        <%topics.push(event.topic);%>
+                    <% } %>
+                <% });
+            } else {%>
+                <p>There are no events to display</p>
+            <%}%>
+
+            <script>document.write("<table>");</script>
+
+            <% topics.forEach(topic=>{ %>
+                <script>document.write("</a><tr><h1> <%=topic%> Events </h1></tr>");</script>
+                    <%events.forEach(event=>{%>
+                        <% if (event.topic===topic) { %>
+                            <script>document.write("<a href = '/connections/<%=event.id%>'><tr><%=event.title%></tr</a><br>");</script>
+                        <% } %>
+                    <% });%>
+                <%});%>
+                <script>document.write("</table>");</script> 
+        </div>
+    </main>
+<%- include('../partials/footer.ejs')%>
+
+
+
