@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs')%>
     <main>
-        <div id="newConnectForm">
+        <div id="connections">
             <form action = '/connections' method = 'POST'>
                 <div>
                     <label>Topic</label>
@@ -19,7 +19,7 @@
                 <br>
                 <div>
                     <label>Details</label>
-                    <input type="text" placeholder="Description" id="descriptionText" name="description" style="height: 50px;">
+                    <input type="text" placeholder="Description" class="height50" name="description">
                 </div>
                 <br>
                 <br>

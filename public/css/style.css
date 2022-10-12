@@ -15,9 +15,8 @@ header, footer {
     width: 100%;
 }
 
-header {
-    top: 0;
-    height: 170px;
+.height50{
+    height: 50px;
 }
 
 #topHeader {
@@ -26,15 +25,18 @@ header {
     border-width: thin;
 }
 
-#bottomHeader {
-    height: 50px;
+.logo, .eventLogo {   
+    height: 80px;
+    width: 80px;
+    display: inline;
 }
 
 .logo {
     margin: 20px 0px 0px 58px;
-    height: 80px;
-    width: 80px;
-    display: inline;
+}
+
+.eventLogo {
+    margin: 0px 0px 20px 0px;
 }
 
 #userNav {
@@ -50,12 +52,6 @@ header {
     height: 20px;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    height: 20px;
-}
-
 li {
     display: inline;
     margin: 15px;
@@ -65,18 +61,8 @@ li a {
     color:white;
 }
 
-#connectionsText{
-    height: fit-content;
-    position: relative;
-    margin: 10vh auto;
-    width: 380px;
-}
-
-#connectionInfo{
-    height: fit-content;
-    margin: 10vh auto auto 30vw;
-    width: 680px;
-    position: absolute;
+form {
+    width: fit-content;
 }
 
 footer {
@@ -117,14 +103,7 @@ button {
 #eventDetails {
     bottom: 0px;
     position: relative;
-    display: block;
-    width: 400px;
-}
-
-#newConnectForm {
-    margin: 20px auto 0px auto;
-    position: relative;
-    display: block;
+    display: inline-block;
     width: 400px;
 }
 
@@ -141,7 +120,14 @@ button {
     width: 250px;
 }
 
-#welcomeText{
+#connections{
+    height: fit-content;
+    position: relative;
+    margin: 10vh auto;
+    width: fit-content;
+}
+
+#content{
     color: black;
     word-wrap: break-word;
     width: 60%;
@@ -153,6 +139,7 @@ button {
 input{
     width: 300px;
     float: right;
+    margin-left: 20px;
 }
 
 #logoText {
@@ -164,16 +151,4 @@ input{
     position: fixed;
     left: 145px;
     top: 40px;
-}
-
-#eventLogo {
-    margin: 0px 0px 20px 0px;
-    height: 80px;
-    width: 80px;
-    display: inline;
-}
-
-.eventType{
-    display: inline-block;
-    position: relative;
 }
