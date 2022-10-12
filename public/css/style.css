@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    text-decoration: none; 
 }
 
 html, body{
@@ -9,12 +9,9 @@ html, body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header,
-footer {
+header, footer {
     color: white;
     background-color: black;
-    left: 0;
-    right: 0;
     width: 100%;
 }
 
@@ -51,7 +48,6 @@ header {
     margin: 15px 0px 0px 40px;
     float: left;
     height: 20px;
-
 }
 
 ul {
@@ -61,7 +57,6 @@ ul {
 }
 
 li {
-
     display: inline;
     margin: 15px;
 }
@@ -71,34 +66,17 @@ li a {
 }
 
 #connectionsText{
-    height: 320px;
+    height: fit-content;
     position: relative;
     margin: 10vh auto;
     width: 380px;
 }
 
 #connectionInfo{
-    height: 320px;
-
+    height: fit-content;
     margin: 10vh auto auto 30vw;
     width: 680px;
     position: absolute;
-}
-
-#connectionsList {
-    display: block;
-}
-
-ul.connectionsList  {
-    margin-left: 25px;
-    display: block;
-    height: 120px;
-    margin-bottom: 5px;
-}
-
-.connectionsList li a {
-    color:black;
-    display: block;
 }
 
 footer {
@@ -126,13 +104,6 @@ button {
     margin: 5px 5px 5px 10px;
     display: inline;
     height: 25px;
-}
-
-#connectionInfo h2{
-    width: 600px;
-    text-align: center;
-    display: inline;
-    
 }
 
 #eventLocation {
@@ -184,7 +155,6 @@ input{
     float: right;
 }
 
-
 #logoText {
     color: white;
     font-size: 40px;
@@ -197,14 +167,10 @@ input{
 }
 
 #eventLogo {
-    margin: 20px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
     height: 80px;
-    width: 120px;
+    width: 80px;
     display: inline;
-}
-
-#descriptionText{
-    height: 50px;
 }
 
 .eventType{
