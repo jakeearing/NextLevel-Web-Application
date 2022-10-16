@@ -15,10 +15,10 @@
             <script>document.write("<table>");</script>
 
             <% topics.forEach(topic=>{ %>
-                <script>document.write("</a><tr><h1> <%=topic%> Events </h1></tr>");</script>
+                <script>document.write("<tr><h1> <%=topic%> Events </h1></tr>");</script>
                     <%events.forEach(event=>{%>
                         <% if (event.topic===topic) { %>
-                            <script>document.write("<a href = '/connections/<%=event.id%>'><tr><%=event.title%></tr</a><br>");</script>
+                            <script>document.write("<a href = '/connections/<%=event.id%>'><tr><%=event.title%></tr></a><br>");</script>
                         <% } %>
                     <% });%>
                 <%});%>
