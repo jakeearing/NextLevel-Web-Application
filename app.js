@@ -28,10 +28,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(morgan('tiny'));
 app.use(methodOverride('_method'));
 
-//routes
-app.get('/', (req, res)=>{
-    res.render('index');
-});
+app.use('/', mainRoutes);
 
 app.use('/connections', connectionRoutes);
 
