@@ -4,49 +4,49 @@
             <form action = '/connections' method = 'POST'>
                 <div>
                     <label>Topic</label>
-                    <input type="text" placeholder="Topic" id="topic" name="topic">
+                    <input type="text" placeholder="Topic" id="topic" name="topic" required>
                 </div>
                 <br>
                 <div>
                     <label>Title</label>
-                    <input type="text" placeholder="Title" id="title" name="title">
+                    <input type="text" placeholder="Title" id="title" name="title" required>
                 </div>
                 <br>
                 <div>
                     <label>Host</label>
-                    <input type="text" placeholder="Host" id="host" name="host">
+                    <input type="text" placeholder="Host" id="host" name="host" required>
                 </div>
                 <br>
                 <div>
                     <label>Details</label>
-                    <input type="text" placeholder="Description" class="height50" name="description">
+                    <input type="text" placeholder="Description" class="height50" name="description" required>
                 </div>
                 <br>
                 <br>
                 <br>
                 <div>
                     <label>Where</label>
-                    <input type="text" placeholder="Location" id="location" name="location">
+                    <input type="text" placeholder="Location" id="location" name="location" required>
                 </div>
                 <br>
                 <div>
                     <label>When</label>
-                    <input type="date" id="date" name="date">
+                    <input type="date" value = "2022-01-01" id="date" name="date" required>
                 </div>
                 <br>
                 <div>
                     <label>Start</label>
-                    <input type="time" id="start" name="start">
+                    <input type="time" value="12:00" id="start" name="start" required>
                 </div>
                 <br>
                 <div>
                     <label>End</label>
-                    <input type="time" id="end" name="end">
+                    <input type="time" value="13:00" id="end" name="end" required>
                 </div>
                 <br>
                 <div>
-                    <label>Image</label>
-                    <input type="file" id="image" name="image">
+                    <label>Image URL</label>
+                    <input type="text" placeholder="Enter image link here" id="image" name="image" required>
                 </div>
                 <br>
                 <div class="textCenter">

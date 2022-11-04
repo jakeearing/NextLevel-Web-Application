@@ -4,49 +4,49 @@
             <form method = 'POST' action = '/connections/<%=event.id%>?_method=PUT'>
                 <div>
                     <label>Topic</label>
-                    <input type="text" placeholder="Topic" id="topic" name="topic" value = "<%=event.topic%>">
+                    <input type="text" placeholder="Topic" id="topic" name="topic" value = "<%=event.topic%>" required>
                 </div>
                 <br>
                 <div>
                     <label>Title</label>
-                    <input type="text" placeholder="Title" id="title" name="title" value = "<%=event.title%>">
+                    <input type="text" placeholder="Title" id="title" name="title" value = "<%=event.title%>" required>
                 </div>
                 <br>
                 <div>
                     <label>Host</label>
-                    <input type="text" placeholder="Host" id="host" name="host" value = "<%=event.host%>">
+                    <input type="text" placeholder="Host" id="host" name="host" value = "<%=event.host%>" required>
                 </div>
                 <br>
                 <div>
                     <label>Details</label>
-                    <input type="text" placeholder="Description" class="height50" name="description" value = "<%=event.description%>">
+                    <input type="text" placeholder="Description" class="height50" name="description" value = "<%=event.description%>" required minlength="10">
                 </div>
                 <br>
                 <br>
                 <br>
                 <div>
                     <label>Where</label>
-                    <input type="text" placeholder="Location" id="location" name="location" value = "<%=event.location%>">
+                    <input type="text" placeholder="Location" id="location" name="location" value = "<%=event.location%>" required>
                 </div>
                 <br>
                 <div>
                     <label>When</label>
-                    <input type="date" id="date" name="date" value = "<%=event.date%>">
+                    <input type="date" id="date" name="date" value = "<%=event.date%>" required>
                 </div>
                 <br>
                 <div>
                     <label>Start</label>
-                    <input type="time" id="start" name="start" value = "<%=event.start%>">
+                    <input type="time" id="start" name="start" value = "<%=event.start%>" required>
                 </div>
                 <br>
                 <div>
                     <label>End</label>
-                    <input type="time" id="end" name="end" value = "<%=event.end%>">
+                    <input type="time" id="end" name="end" value = "<%=event.end%>" required>
                 </div>
                 <br>
                 <div>
-                    <label>Image</label>
-                    <input type="file" id="image" name="image" value = "<%=event.image%>">
+                    <label>Image URL</label>
+                    <input type="text" id="image" name="image" value = "<%=event.image%>" required>
                 </div>
                 <br>
                 <div class="textCenter">
