@@ -18,8 +18,9 @@ exports.create = (req, res, next) => {
         res.redirect('/connections');
     })
     .catch(err=>{
-        if (err.name === 'ValidationError')
+        if (err.name === 'ValidationError') {
             err.status = 400;
+        }
         next(err);
     });
 };
@@ -37,7 +38,7 @@ exports.show = (req, res, next) => {
             return res.render('./connections/show', { event });
         } else {
             let err = new Error('Cannot find an event with id ' + id);
-                err.status = 404;
+            err.status = 404;
             next(err);
         }
     })
@@ -57,7 +58,7 @@ exports.edit = (req, res, next) => {
             return res.render('./connections/edit', {event});
         } else {
             let err = new Error('Cannot find an event with id ' + id);
-                err.status = 404;
+            err.status = 404;
             next(err);
         }
     })
@@ -85,8 +86,9 @@ exports.update = (req, res, next) => {
         }
     })
     .catch(err=> {
-        if (err.name === 'ValidationError')
+        if (err.name === 'ValidationError'){
             err.status = 400;
+        }
         next(err);
     });
 };
