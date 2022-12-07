@@ -7,4 +7,4 @@ const rsvpSchema = new Schema({
     event: {type: Schema.Types.ObjectId, ref: 'Connection'},
 });
 
-module.exports = mongoose.model('Rsvp', connectionSchema);
+module.exports = mongoose.model('Rsvp', rsvpSchema);

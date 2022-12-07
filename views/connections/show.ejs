@@ -16,6 +16,13 @@
             <br>
             <p><%= event.description%></p> 
             <br>
+            <div class="rsvp">
+            <form>
+                <button type="submit" value="y" formmethod = "POST" formaction="/connections/<%= event.id%>/rsvp">Yes</button>
+                <button type="submit" value="n" formmethod = "POST" formaction="/connections/<%= event.id%>/rsvp">No</button>
+                <button type="submit" value="m" formmethod = "POST" formaction="/connections/<%= event.id%>/rsvp">Maybe</button>
+            </form>
+            </div>
             <%if(user == event.host._id) {%>
             <form>
                 <button type="submit" formmethod = "GET" formaction="/connections/<%= event.id%>/edit">Edit</button>
