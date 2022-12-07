@@ -14,9 +14,14 @@
             
             <nav id="userNav">
                 <ul>
-                    <li><a href="/connections/new">Start a new connection</a></li>
-                    <li><a href="/">Login</a></li>
-                    <li><a href="/">Sign up</a></li>
+                    <%if(!user) {%>
+                        <li><a href='/users/new'>Sign Up</a></li>
+                        <li><a href='/users/login'>Login</a></li>
+                    <%} else {%>
+                        <li><a href='/users/profile'>Profile</a></li>
+                        <li><a href='/users/logout'>Logout</a></li>
+                        <li><a href="/connections/new">Start a new connection</a>
+                    <%}%>
                 </ul>
             </nav>
         </div>
