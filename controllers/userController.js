@@ -62,7 +62,7 @@ exports.login = (req, res, next)=>{
 
 exports.profile = (req, res, next)=>{
     let id = req.session.user;
-    Promise.all([model.findById(id), Connection.find({author: id})])
+    Promise.all([model.findById(id), Connection.find({host: id})])
     .then(results=>{
         const [user, connections] = results;
         res.render('./user/profile', {user, connections});

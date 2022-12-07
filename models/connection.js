@@ -6,7 +6,7 @@ const connectionSchema = new Schema({
     title: {type: String, required: [true, 'title is required']},
     description: {type: String, required: [true, 'description is required'], 
     minLength: [10, 'The description must be at least 10 characters']},
-    host: {type: String, required: [true, 'host is required']},
+    host: {type: Schema.Types.ObjectId, ref: 'User'},
     date: {type: String, required: [true, 'Date is required']},
     start: {type: String, required: [true, 'start time is required']},
     end: {type: String, required: [true, 'end time is required']},

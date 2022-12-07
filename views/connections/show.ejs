@@ -5,7 +5,7 @@
             <br>
             <img src="<%= event.image%>" class="eventLogo" alt="Event Logo">
             <br>
-            <p>Host: <%= event.host%></p>
+            <p>Host: <%= event.host.firstName%> <%= event.host.lastName%></p>
             <p>Date: <%= event.date%></p>
             <p>Start Time: <%= event.start%> UTC</p>
             <p>End Time: <%= event.end%> UTC</p>
@@ -16,10 +16,12 @@
             <br>
             <p><%= event.description%></p> 
             <br>
+            <%if(user == event.host._id) {%>
             <form>
                 <button type="submit" formmethod = "GET" formaction="/connections/<%= event.id%>/edit">Edit</button>
                 <button type="submit" formmethod = "POST" formaction = "/connections/<%= event.id%>?_method=DELETE">Delete</button>
             </form>
+            <%}%>
         </div>
     </main>
     <%- include('../partials/footer.ejs')%>

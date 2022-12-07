@@ -20,13 +20,13 @@ exports.isLoggedIn = (req, res, next) =>{
      }
 };
 
-//check if user is author of the connection
-exports.isAuthor = (req, res, next) =>{
+//check if user is host of the connection
+exports.isHost = (req, res, next) =>{
     let id = req.params.id;
     Connection.findById(id)
     .then(connection=>{
         if(connection) {
-            if(connection.author == req.session.user) {
+            if(connection.host == req.session.user) {
                 return next();
             } else {
                 let err = new Error('Unauthorized to access the resource');

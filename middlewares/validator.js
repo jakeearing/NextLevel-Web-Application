@@ -32,6 +32,6 @@ exports.validateResult = (req, res, next) => {
     }
 }
 
-exports.validateEvent = 
+exports.validateConnection = 
 [body('title', 'Title cannot be empty').notEmpty().trim().escape(),
 body('content', 'Content must be at least 10 characters').isLength({min: 10}).trim().escape()];

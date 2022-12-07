@@ -12,14 +12,16 @@ exports.new = (req, res) => {
 
 exports.create = (req, res, next) => {
     let event = new model(req.body);
+    event.host = req.session.user;
     event.save()
     .then((event)=>{
-        console.log(event);
+        req.flash('success', 'Connection has been created successfully');
         res.redirect('/connections');
     })
     .catch(err=>{
-        if (err.name === 'ValidationError') {
-            err.status = 400;
+        if(err.name === 'ValidationError' ) {
+        req.flash('error', err.message);
+        return res.redirect('back');
         }
         next(err);
     });
@@ -27,12 +29,7 @@ exports.create = (req, res, next) => {
 
 exports.show = (req, res, next) => {
     let id = req.params.id;
-    if(!id.match(/^[0-9a-fA-F]{24}$/)) {
-        let err = new Error('Invalid event id');
-        err.status = 400;
-        return next(err);  
-    }
-    model.findById(id)
+    model.findById(id).populate('host', 'firstName lastName')
     .then(event=>{
         if(event){
             return res.render('./connections/show', { event });
@@ -45,22 +42,11 @@ exports.show = (req, res, next) => {
     .catch(err=>next(err));
 };
 
-exports.edit = (req, res, next) => {
+exports.edit = (req, res, next)=>{
     let id = req.params.id;
-    if(!id.match(/^[0-9a-fA-F]{24}$/)) {
-        let err = new Error('Invalid event id');
-        err.status = 400;
-        return next(err);  
-    }
     model.findById(id)
     .then(event=>{
-        if(event){
-            return res.render('./connections/edit', {event});
-        } else {
-            let err = new Error('Cannot find an event with id ' + id);
-            err.status = 404;
-            next(err);
-        }
+        return res.render('./connections/edit', {event});
     })
     .catch(err=>next(err));
 };
@@ -69,48 +55,25 @@ exports.update = (req, res, next) => {
     let event = req.body;
     let id = req.params.id;
 
-    if(!id.match(/^[0-9a-fA-F]{24}$/)) {
-        let err = new Error('Invalid event id');
-        err.status = 400;
-        return next(err);  
-    }
-
     model.findByIdAndUpdate(id, event, {useFindAndModify: false, runValidators: true})
     .then(event=>{
-        if(event) {
-            res.redirect('/connections/' + id);
-        } else {
-            let err = new Error('Cannot find an event with id ' + id);
-            err.status = 404;
-            next(err);
-        }
+        return res.redirect('/connections/' + id);
     })
     .catch(err=> {
-        if (err.name === 'ValidationError'){
-            err.status = 400;
+        if(err.name === 'ValidationError') {
+            req.flash('error', err.message);
+            return res.redirect('/back');
         }
         next(err);
     });
 };
 
-exports.delete = (req, res, next) => {
+exports.delete = (req, res, next)=>{
     let id = req.params.id;
-
-    if(!id.match(/^[0-9a-fA-F]{24}$/)) {
-        let err = new Error('Invalid event id');
-        err.status = 400;
-        return next(err);  
-    }
-
+    
     model.findByIdAndDelete(id, {useFindAndModify: false})
     .then(event =>{
-        if(event) {
-            res.redirect('/connections');
-        } else {
-            let err = new Error('Cannot find an event with id ' + id);
-            err.status = 404;
-            return next(err);
-        }
+        res.redirect('/connections');
     })
     .catch(err=>next(err));
 };
