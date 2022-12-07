@@ -1,4 +1,5 @@
 const model = require('../models/connection');
+const rsvp = require('../models/rsvp');
 
 exports.index = (req, res, next) => {
     model.find()
@@ -76,4 +77,9 @@ exports.delete = (req, res, next)=>{
         res.redirect('/connections');
     })
     .catch(err=>next(err));
+};
+
+exports.rsvp = (req, res, next)=>{
+    let id = req.params.id;
+
 };

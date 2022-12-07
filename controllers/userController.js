@@ -78,7 +78,6 @@ exports.logout = (req, res, next)=>{
        else
             res.redirect('/');  
     });
-   
  };
 
 
