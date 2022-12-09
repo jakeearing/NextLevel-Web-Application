@@ -98,10 +98,10 @@ exports.rsvp = (req, res, next)=>{
             userRsvp.user = req.session.user;
             userRsvp.event = id;
             userRsvp.save()
-            res.redirect('back');
+            res.redirect('/users/profile');
         } else {
             rsvp.findOneAndUpdate({ user:req.session.user , event:id}, {status:req.body.response}, null, function (err, user) {
-                res.redirect('back');
+                res.redirect('/users/profile');
             }); 
         }
     });
