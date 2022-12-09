@@ -11,6 +11,18 @@
     } else {%>
         <p>You have not created any connections</p>
     <%}%>
+    <%if(rsvps.length) {%>
+        <p>Your RSVPs</p>
+        <%rsvps.forEach(rsvp => {%>
+            <%allConnections.forEach(connection => {%>
+                <%if(connection._id.equals(rsvp.event)){ %>
+                    <a href = '/connections/<%= rsvp.event%>'><p><%=connection.title%></p></a>
+                <% } %>
+            <%});%>
+        <%});
+    } else {%>
+        <p>You have not RSVPed to any connections</p>
+    <%}%>
     </div>
 </main>
 
