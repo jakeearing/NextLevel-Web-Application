@@ -16,19 +16,25 @@
             <br>
             <p><%= event.description%></p> 
             <br>
-            <div class="rsvp">
-            <form>
-                <button type="submit" value="y" formmethod = "POST" formaction="/connections/<%= event.id%>/rsvp">Yes</button>
-                <button type="submit" value="n" formmethod = "POST" formaction="/connections/<%= event.id%>/rsvp">No</button>
-                <button type="submit" value="m" formmethod = "POST" formaction="/connections/<%= event.id%>/rsvp">Maybe</button>
-            </form>
-            </div>
+            
+            <br>
             <%if(user == event.host._id) {%>
             <form>
                 <button type="submit" formmethod = "GET" formaction="/connections/<%= event.id%>/edit">Edit</button>
                 <button type="submit" formmethod = "POST" formaction = "/connections/<%= event.id%>?_method=DELETE">Delete</button>
             </form>
+            <%} else {%>
+                <div class="rsvp">
+                    <form action="/connections/<%= event.id%>/rsvp" method="post">
+                        <p>RSVP to attend</p><br>
+                        <button type="submit" name="response" value="y">Yes</button>
+                        <button type="submit" name="response" value="n">No</button>
+                        <button type="submit" name="response" value="m">Maybe</button>
+                    </form>
+                </div>
+                <br>
             <%}%>
+            <p>Current RSVPs: <%= rsvps%></p> 
         </div>
     </main>
     <%- include('../partials/footer.ejs')%>

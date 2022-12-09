@@ -30,10 +30,17 @@ exports.create = (req, res, next) => {
 
 exports.show = (req, res, next) => {
     let id = req.params.id;
+
+    var query = rsvp.find({status:"y",event:id});
+    query.count(function (err, count) {
+    if (err) console.log(err)
+    else rsvps=count;
+    });
+
     model.findById(id).populate('host', 'firstName lastName')
     .then(event=>{
         if(event){
-            return res.render('./connections/show', { event });
+            return res.render('./connections/show', { event, rsvps });
         } else {
             let err = new Error('Cannot find an event with id ' + id);
             err.status = 404;
@@ -80,6 +87,20 @@ exports.delete = (req, res, next)=>{
 };
 
 exports.rsvp = (req, res, next)=>{
+    let userRsvp = new rsvp(req.body);
     let id = req.params.id;
 
-};
+    rsvp.findOne({ user:req.session.user , event:id}, function (err, user) {
+        if(!user){
+            userRsvp.status = req.body.response;
+            userRsvp.user = req.session.user;
+            userRsvp.event = id;
+            userRsvp.save()
+            res.redirect('back');
+        } else {
+            rsvp.findOneAndUpdate({ user:req.session.user , event:id}, {status:req.body.response}, null, function (err, user) {
+            });
+            res.redirect('back');
+        }
+    });
+}
