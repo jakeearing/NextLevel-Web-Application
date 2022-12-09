@@ -31,7 +31,7 @@ exports.create = (req, res, next) => {
 exports.show = (req, res, next) => {
     let id = req.params.id;
     //Counts all "Yes" rsvps for the event.
-    var query = rsvp.find({status:"y",event:id});
+    var query = rsvp.find({status:"YES",event:id});
     query.count(function (err, count) {
     if (err) console.log(err)
     else rsvps=count;
