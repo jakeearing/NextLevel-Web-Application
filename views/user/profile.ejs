@@ -1,27 +1,38 @@
 <%- include('../partials/header.ejs')%>
 
 <main>
-    <div id="content">
-    <h2>Welcome, <%=user.firstName%></h2>
+    <div id="connections">
+    <h2>Welcome, <%=user.firstName%></h2><br>
     <%if(connections.length) {%>
-        <p>You have created the following connections</p>
+        <h2>You have created the following connections</h2><br>
+            <script>document.write("<table id='profile'>");</script>
+            <script>document.write("<tr><th>Connection</th><th>Topic</th><th>Actions</th></tr>");</script>
         <%connections.forEach(connection => {%>
-            <a href = '/connections/<%= connection.id%>'><p><%=connection.title%></p></a>
-        <%});
-    } else {%>
+            <script>document.write("<tr><td><a href = '/connections/<%=connection.id%>'><%=connection.title%></a></td><td><%=connection.topic%></td>");</script>
+            <script>document.write("<td><form><button type='submit' formmethod = 'GET' formaction='/connections/<%= connection.id%>/edit'>Edit</button>");</script>
+            <script>document.write("<button type='submit' formmethod = 'POST' formaction = '/connections/<%= connection.id%>?_method=DELETE'>Delete");</script>
+            <script>document.write("</button></form></td></tr>");</script>
+        <%});%>
+            <script>document.write("</table><br>");</script> 
+    <%} else {%>
         <p>You have not created any connections</p>
     <%}%>
+
     <%if(rsvps.length) {%>
-        <p>Your RSVPs</p>
-        <%rsvps.forEach(rsvp => {%>
-            <%allConnections.forEach(connection => {%>
-                <%if(connection._id.equals(rsvp.event)){ %>
-                    <a href = '/connections/<%= rsvp.event%>'><p><%=connection.title%></p></a>
-                <% } %>
-            <%});%>
-        <%});
-    } else {%>
-        <p>You have not RSVPed for any connections</p>
+        <h2>You have RSVPed for the following events</h2><br>
+            <script>document.write("<table id='profile'>");</script>
+            <script>document.write("<tr><th>Connection</th><th>Topic</th><th>Going?</th></tr>");</script>
+        <%rsvps.forEach(rsvp => {   
+        allConnections.forEach(connection => {
+            if(connection._id.equals(rsvp.event)){ %>
+            <script>document.write("<tr><td><a href = '/connections/<%=rsvp.event%>'><%=connection.title%></a></td><td><%=connection.topic%></td>");</script>
+            <script>document.write("<td><%=rsvp.status%></td></tr>");</script>
+            <% } 
+        });
+        });%>
+            <script>document.write("</table>");</script> 
+    <%} else {%>
+        <p>You have not RSVPed to any connections</p>
     <%}%>
     </div>
 </main>
