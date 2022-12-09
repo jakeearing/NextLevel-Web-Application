@@ -71,9 +71,10 @@ header a, footer a {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     height: 60px;
+   
 }
 
 main {
@@ -106,6 +107,29 @@ main {
     font-size: 25px;
 }
 
+#profile{
+    max-width:100%;
+    white-space:nowrap; 
+    font-size: 14px;
+    border: 1px solid;
+}
+
+#profile th,td {  
+    border: 1px solid;
+}
+
+#profile td {
+    text-align: center;
+}
+
+#profile td:nth-child(1) {
+    width: 350px;
+}
+
+#profile td:nth-child(2) {
+    width: 100px;
+}
+
 input{
     width: 300px;
     float: right;
@@ -117,8 +141,24 @@ input{
     font-size: 40px;
     height: 40px;
     width: 240px;
-    display: inline;
-    position: fixed;
-    left: 145px;
-    top: 40px;
+    display: inline-block;
+    position: relative;
+    left: 10px;
+    top: -25px;
 }
+
+.success {
+    background: rgba(108, 192, 112, 0.7);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px 10px;
+  }
+  
+  .error {
+    background: rgba(255, 102, 51, 0.7);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px 10px;
+  }
