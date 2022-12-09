@@ -30,7 +30,7 @@ exports.create = (req, res, next) => {
 
 exports.show = (req, res, next) => {
     let id = req.params.id;
-
+    //Counts all "Yes" rsvps for the event.
     var query = rsvp.find({status:"y",event:id});
     query.count(function (err, count) {
     if (err) console.log(err)
@@ -101,8 +101,8 @@ exports.rsvp = (req, res, next)=>{
             res.redirect('back');
         } else {
             rsvp.findOneAndUpdate({ user:req.session.user , event:id}, {status:req.body.response}, null, function (err, user) {
-            });
-            res.redirect('back');
+                res.redirect('back');
+            }); 
         }
     });
 }

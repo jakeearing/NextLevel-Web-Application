@@ -41,3 +41,25 @@ exports.isHost = (req, res, next) =>{
     })
     .catch(err=>next(err));
 };
+
+//check if user is not host of the connection
+exports.isNotHost = (req, res, next) =>{
+    let id = req.params.id;
+    Connection.findById(id)
+    .then(connection=>{
+        if(connection) {
+            if(connection.host != req.session.user) {
+                return next();
+            } else {
+                let err = new Error('You cannot RSVP for your own event.');
+                err.status = 401;
+                return next(err);
+            }
+        } else {
+            let err = new Error('Cannot find a connection with id ' + req.params.id);
+            err.status = 404;
+            return next(err);
+        }
+    })
+    .catch(err=>next(err));
+};
