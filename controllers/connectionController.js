@@ -81,6 +81,8 @@ exports.delete = (req, res, next)=>{
     
     model.findByIdAndDelete(id, {useFindAndModify: false})
     .then(event =>{
+        rsvp.findOneAndDelete({event:id}, {useFindAndModify: false})
+        .catch(err=>next(err));
         res.redirect('/connections');
     })
     .catch(err=>next(err));
