@@ -36,8 +36,8 @@ exports.validateConnection =
 [body('topic', 'Topic cannot be empty').notEmpty().trim().escape(),
 body('title', 'Title cannot be empty').notEmpty().trim().escape(),
 body('description', 'Description must be at least 10 characters').isLength({min: 10}).trim().escape(),
-body('date', 'Date must be a valid date after today').notEmpty().isDate().isAfter("2021-12-09").trim().escape(),
+body('date', 'Date must be a valid date after today').notEmpty().isDate().isAfter("2022-12-09").trim().escape(),
 body('start', 'Start time cannot be empty').notEmpty().trim().escape(),
 body('end', 'End time cannot be empty').notEmpty().trim().escape(),
 body('location', 'Location cannot be empty').notEmpty().trim().escape(),
-body('image', 'Image URL cannot be empty').notEmpty().trim().escape()];
+body('image', 'Image URL cannot be empty').notEmpty().trim()];
