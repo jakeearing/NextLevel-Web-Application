@@ -3,7 +3,10 @@ const rsvp = require('../models/rsvp');
 
 exports.index = (req, res, next) => {
     model.find()
-    .then(events=>res.render('./connections/index', {events}))
+    .then(events=>{
+        let userName = req.session.userName;
+        res.render('./connections/index', {userName, events});
+    })
     .catch(err=>next(err));  
 };
 
@@ -40,7 +43,8 @@ exports.show = (req, res, next) => {
     model.findById(id).populate('host', 'firstName lastName')
     .then(event=>{
         if(event){
-            return res.render('./connections/show', { event, rsvps });
+            let userName = req.session.userName;
+            return res.render('./connections/show', { userName, event, rsvps });
         } else {
             let err = new Error('Cannot find an event with id ' + id);
             err.status = 404;
@@ -54,7 +58,8 @@ exports.edit = (req, res, next)=>{
     let id = req.params.id;
     model.findById(id)
     .then(event=>{
-        return res.render('./connections/edit', {event});
+        let userName = req.session.userName;
+        return res.render('./connections/edit', {userName, event});
     })
     .catch(err=>next(err));
 };
@@ -100,7 +105,7 @@ exports.rsvp = (req, res, next)=>{
             userRsvp.save()
             res.redirect('/users/profile');
         } else {
-            rsvp.findOneAndUpdate({ user:req.session.user , event:id}, {status:req.body.response}, {useFindAndModify: false, runValidators: true}, function (err, user) {
+            rsvp.findOneAndUpdate({ user:req.session.user , event:id}, {status:req.body.response}, null, function (err, user) {
                 res.redirect('/users/profile');
             }); 
         }

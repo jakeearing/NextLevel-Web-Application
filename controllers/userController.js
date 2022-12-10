@@ -49,6 +49,7 @@ exports.login = (req, res, next)=>{
             .then(result=>{
                 if(result) {
                     req.session.user = user._id;
+                    req.session.userName = user.firstName;
                     req.flash('success', 'You have successfully logged in');
                     res.redirect('/users/profile');
             } else {
@@ -63,10 +64,11 @@ exports.login = (req, res, next)=>{
 
 exports.profile = (req, res, next)=>{
     let id = req.session.user;
-    Promise.all([model.findById(id), Connection.find({host: id}), Connection.find(), rsvp.find({user: id})])
+    let userName = req.session.userName;
+    Promise.all([Connection.find({host: id}), Connection.find(), rsvp.find({user: id})])
     .then(results=>{
-        const [user, connections, allConnections, rsvps] = results;
-        res.render('./user/profile', {user, connections, allConnections, rsvps});
+        const [connections, allConnections, rsvps] = results;
+        res.render('./user/profile', {userName, connections, allConnections, rsvps});
     })
     .catch(err=>next(err));
 };

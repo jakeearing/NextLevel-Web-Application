@@ -24,6 +24,7 @@
                     <%}%>
                 </ul>
             </nav>
+            
         </div>
         <div class="height50">
             <nav id="siteNav">
@@ -31,7 +32,7 @@
                     <li><a href="/connections">Connections</a></li>
                 </ul>
             </nav>
-            <%if(user){%><p class="userName">Welcome, <%=user.firstName%></p><%}%>
+            <%if(user){%><p class="userName">Welcome, <%=userName%></p><%}%>
         </div>
         <% if(errorMessages.length > 0) {%>
             <% errorMessages.forEach(message=>{%>

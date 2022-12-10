@@ -3,7 +3,7 @@
 <main>
     <div id="connections">
     <%if(connections.length) {%>
-        <h2><%=user.firstName%>&#39;s connections</h2><br>
+        <h2><%=userName%>&#39;s connections</h2><br>
             <script>document.write("<table id='profile'>");</script>
             <script>document.write("<tr><th>Connection</th><th>Topic</th><th>Actions</th></tr>");</script>
         <%connections.forEach(connection => {%>
@@ -18,7 +18,7 @@
     <%}%>
 
     <%if(rsvps.length) {%>
-        <h2><%=user.firstName%>&#39;s RSVPs</h2><br>
+        <h2><%=userName%>&#39;s RSVPs</h2><br>
             <script>document.write("<table id='profile'>");</script>
             <script>document.write("<tr><th>Connection</th><th>Topic</th><th>Going?</th></tr>");</script>
         <%rsvps.forEach(rsvp => {   
