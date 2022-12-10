@@ -31,10 +31,11 @@
                     <li><a href="/connections">Connections</a></li>
                 </ul>
             </nav>
+            <%if(user){%><p class="userName">Welcome, <%=user.firstName%></p><%}%>
         </div>
         <% if(errorMessages.length > 0) {%>
             <% errorMessages.forEach(message=>{%>
-                <div class='error'>
+                <div class= 'msg error'>
                     <%=message%>
                 </div>
             <%});%>
@@ -43,7 +44,7 @@
         <% if(successMessages.length > 0) {%>
         
             <% successMessages.forEach(message=>{%>
-                <div class='success'>
+                <div class='msg success'>
                     <%=message%>
                 </div>
             <%});%>

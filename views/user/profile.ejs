@@ -2,9 +2,8 @@
 
 <main>
     <div id="connections">
-    <h2>Welcome, <%=user.firstName%></h2><br>
     <%if(connections.length) {%>
-        <h2>You have created the following connections</h2><br>
+        <h2><%=user.firstName%>&#39;s connections</h2><br>
             <script>document.write("<table id='profile'>");</script>
             <script>document.write("<tr><th>Connection</th><th>Topic</th><th>Actions</th></tr>");</script>
         <%connections.forEach(connection => {%>
@@ -15,11 +14,11 @@
         <%});%>
             <script>document.write("</table><br>");</script> 
     <%} else {%>
-        <p>You have not created any connections</p>
+        <p>You have not created any connections</p><br>
     <%}%>
 
     <%if(rsvps.length) {%>
-        <h2>You have RSVPed for the following events</h2><br>
+        <h2><%=user.firstName%>&#39;s RSVPs</h2><br>
             <script>document.write("<table id='profile'>");</script>
             <script>document.write("<tr><th>Connection</th><th>Topic</th><th>Going?</th></tr>");</script>
         <%rsvps.forEach(rsvp => {   
