@@ -57,6 +57,13 @@ header, footer {
     margin: 15px 0px 0px 40px;
 }
 
+.userName {
+    float: right;
+    width: fit-content;
+    height: 20px;
+    margin: 15px 65px 0px 0px;
+}
+
 #footerNav {
     margin: 20px 0px 0px 40px;
 }
@@ -81,7 +88,7 @@ main {
     top: 170px;
     bottom: 60px;
     width: 100%;
-    min-height: calc(100vh - 230px);
+    min-height: calc(100vh - 250px);
     position: absolute;
 }
 
@@ -111,10 +118,10 @@ main {
     max-width:100%;
     white-space:nowrap; 
     font-size: 14px;
-    border: 1px solid;
+    border: solid;
 }
 
-#profile th,td {  
+#profile th,#profile td {  
     border: 1px solid;
 }
 
@@ -128,6 +135,11 @@ main {
 
 #profile td:nth-child(2) {
     width: 100px;
+}
+
+#account{
+    max-width:100%;
+    white-space:nowrap; 
 }
 
 input{
@@ -147,18 +159,17 @@ input{
     top: -25px;
 }
 
-.success {
-    background: rgba(108, 192, 112, 0.7);
+.msg {  
     color: #fff;
     width: 100%;
     text-align: center;
-    padding: 10px 10px;
+    padding: 10px 0 10px 0;
+  }
+  
+  .success {
+    background: green;
   }
   
   .error {
-    background: rgba(255, 102, 51, 0.7);
-    color: #fff;
-    width: 100%;
-    text-align: center;
-    padding: 10px 10px;
+    background: red;
   }
