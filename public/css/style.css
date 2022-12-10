@@ -137,6 +137,10 @@ main {
     width: 100px;
 }
 
+#profile td:nth-child(3), #profile th:nth-child(3) {
+    width: 100px;
+}
+
 #account{
     max-width:100%;
     white-space:nowrap; 
