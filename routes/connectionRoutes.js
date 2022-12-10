@@ -2,7 +2,6 @@ const express = require('express');
 const controller = require('../controllers/connectionController');
 const {isLoggedIn, isHost, isNotHost} = require('../middlewares/auth');
 const {validateId, validateConnection, validateResult} = require('../middlewares/validator');
-const {isAfter} = require('express-validator');
 
 const router = express.Router();
 
@@ -20,6 +19,6 @@ router.put('/:id', validateId, isLoggedIn, isHost, validateResult, validateConne
 
 router.delete('/:id', validateId, isLoggedIn, isHost, controller.delete);
 
-router.post('/:id/rsvp', validateId, isLoggedIn, isNotHost, validateConnection, controller.rsvp);
+router.post('/:id/rsvp', validateId, isLoggedIn, isNotHost, controller.rsvp);
 
 module.exports = router;

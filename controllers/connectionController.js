@@ -100,7 +100,7 @@ exports.rsvp = (req, res, next)=>{
             userRsvp.save()
             res.redirect('/users/profile');
         } else {
-            rsvp.findOneAndUpdate({ user:req.session.user , event:id}, {status:req.body.response}, null, function (err, user) {
+            rsvp.findOneAndUpdate({ user:req.session.user , event:id}, {status:req.body.response}, {useFindAndModify: false, runValidators: true}, function (err, user) {
                 res.redirect('/users/profile');
             }); 
         }
