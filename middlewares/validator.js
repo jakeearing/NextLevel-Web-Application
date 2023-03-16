@@ -41,3 +41,6 @@ body('start', 'Start time cannot be empty').notEmpty().trim().escape(),
 body('end', 'End time cannot be empty').notEmpty().trim().escape(),
 body('location', 'Location cannot be empty').notEmpty().trim().escape(),
 body('image', 'Image URL cannot be empty').notEmpty().trim()];
+
+exports.validateRSVP = 
+[body('response', 'RSVP test validator').isIn([['sup']])];
